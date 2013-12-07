@@ -1,10 +1,10 @@
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
-from app import app
 from datetime import datetime
 
 
 app = Flask(__name__)
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'localhost'
 db = SQLAlchemy(app)
 
@@ -36,14 +36,13 @@ class Song(db.Model):
 
 
 
-app.run()
+from app import app
+app.run(debug=True)
 
 
-'''
 @app.route("/")
 def hello():
     return "Hello World!"
 
 if __name__ == "__main__":
     app.run()
-'''
