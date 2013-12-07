@@ -24,6 +24,15 @@
     <h2>Upload Song</h2>
     <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
         <input type="file" name="file" class="button" multiple> <br/><br/>
+        <input type="text" name="title" placeholder="Title" class="form-control">
+        <br />
+        <input type="text" name="artist" placeholder="Artist" class="form-control">
+        <br />
+        <select name="genre" input="input-medium">
+        	<option value="empty" selected="selected">Genre</option>
+        	<option value="CoolJazz">Cool Jazz</option>
+        	<option value="NotCoolJazz">Not Cool</option>
+        </select>
         <input type="submit" value="Upload" class="btn btn-danger">
       </form>
 </div>
