@@ -1,3 +1,4 @@
+'''
 @app.route('/upload', methods = ['GET','POST'])
 def upload_file():
 	if request.method == 'POST':
@@ -12,3 +13,13 @@ def upload_file():
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'],
                                filename, as_attachment=True)
+
+'''
+import os
+from flask import render_template, request, send_from_directory
+from werkzeug.utils import secure_filename
+from app import app
+
+@app.route('/')
+def index():
+	return render_template('index.html')
